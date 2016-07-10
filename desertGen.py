@@ -4,15 +4,17 @@ from random import *
 from tools import *
 
 def desertGenerator(desertW, desertH, villagesNum, villageSize, isRoad):
-	
-	# 1 : générer une grille à partir des dimensions de la carte
+
+	ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
+	# 1 : gÃ©nÃ©rer une grille Ã  partir des dimensions de la carte
 	grid = []
 
 	for i in range(0, desertW):
 		for j in range(0, desertH):
 			grid.append((i, j, 0));
 
-	# 2 : générer une route (facultatif)
+	# 2 : gÃ©nÃ©rer une route (facultatif)
 	
 	roadPoints = []
 	
@@ -21,15 +23,16 @@ def desertGenerator(desertW, desertH, villagesNum, villageSize, isRoad):
 		x = randint(0,1)
 		y = randint(0,1)
 		
-		# direction générale de la route : 0 = vers le haut, 1 = vers le bas, 2 = vers la gauche, 3 = vers la droite
+		# direction gÃ©nÃ©rale de la route : 0 = vers le haut, 1 = vers le bas, 2 = vers la gauche, 3 = vers la droite
 		roadDir = randint(0,1);
 		
-		# coordonnées du premier bloc de route (à une des extrémités de la carte)
+		# coordonnÃ©es du premier bloc de route (Ã  une des extrÃ©mitÃ©s de la carte)
 		if(roadDir == 0):
 			# Direction verticale
 			roadX = 0
 			roadY = randint(0,desertH)
-			grid.remove((roadX, roadY, 0))
+			if (roadX, roadY, 0) in grid:
+				grid.remove((roadX, roadY, 0))
 			desertRoad((roadX, roadY, 0))
 			while(roadX <= desertW):
 				nextBlock = randint(0,9)
@@ -68,7 +71,7 @@ def desertGenerator(desertW, desertH, villagesNum, villageSize, isRoad):
 				else:
 					continue
 
-	#3 : définir l'oasis
+	#3 : dÃ©finir l'oasis
 	
 	oasisX = randint(0,desertW)
 	oasisY = randint(0,desertH)
@@ -78,7 +81,7 @@ def desertGenerator(desertW, desertH, villagesNum, villageSize, isRoad):
 			oasisX = randint(0,desertW)
 			oasisY = randint(0,desertH)
 					
-	# 4 : définir le(s) village(s) 
+	# 4 : dÃ©finir le(s) village(s) 
 
 	village = []
 
@@ -87,7 +90,7 @@ def desertGenerator(desertW, desertH, villagesNum, villageSize, isRoad):
 		village.append(grid[r])
 
 
-	# 5 : générer des bâtiments sur les points de la grille qui restent
+	# 5 : gÃ©nÃ©rer des bÃ¢timents sur les points de la grille qui restent
 
 	farm = False
 

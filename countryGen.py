@@ -21,6 +21,8 @@ def material(type):
 
 def countryGenerator(mapW, mapH, startBlocks, villagesNum, villageSize, river):
 
+	ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
 	# 1 : générer une grille à partir des dimensions de la carte
 	grid = []
 

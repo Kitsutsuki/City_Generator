@@ -7,6 +7,8 @@ from cityGen import *
 from desertGen import *
 from floeGen import *
 
+ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=10)
+
 def initPan(scn) :
 	types.Scene.MyName = StringProperty(name = "Name ",
 	description = "Nom de la structure ?",)

@@ -5,6 +5,8 @@ from tools import *
 
 def cityGenerator(cityW, cityH, startBlocks, centersNum, centerSize, river):
 
+	ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
 	# 1 : générer une grille à partir des dimensions de la ville
 	grid = []
 
