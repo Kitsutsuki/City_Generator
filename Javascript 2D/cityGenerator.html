@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>City Generator</title>
+    <link rel="stylesheet" type="text/css" href="resources/stylesheets/cityGenerator.css" />
+    <link rel="stylesheet" type="text/css" href="resources/stylesheets/checkbox-input.css" />
+    <script type="text/javascript" src="resources/scripts/jquery.js" defer></script>
+    <script type="text/javascript" src="resources/scripts/cityGenerator.js" defer></script>
+</head>
+
+<body>
+
+    <form id="parameters" class="table">
+
+        <div class="row">
+            <div class="cell">
+                <button type="button" id="toggle">Parameters</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="block-size">Block size</label>
+            </div>
+            <div class="cell">
+                <input id="block-size" type="number" size="150" step="1" min="10" value="48" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="width">Map width</label>
+            </div>
+            <div class="cell">
+                <input id="width" type="number" size="150" step="1" min="10" max="50" value="10" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="height">Map height</label>
+            </div>
+            <div class="cell">
+                <input id="height" type="number" size="150" step="1" min="10" max="50" value="10" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="x-position">City X position</label>
+            </div>
+            <div class="cell">
+                <input id="x-position" type="number" size="150" step="1" min="0" value="0" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="y-position">City Y position</label>
+            </div>
+            <div class="cell">
+                <input id="y-position" type="number" size="150" step="1" min="0" value="0" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="world-type">World type</label>
+            </div>
+            <div class="cell">
+                <select id="world-type">
+                    <option value="1" selected>Urban</option>
+                    <option value="2">Rural</option>
+                    <option value="3">Desert</option>
+                </select>
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="road-density">Road density</label>
+            </div>
+            <div class="cell">
+                <input id="road-density" type="number" size="150" step="1" min="0" value="4" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="city-number">City number</label>
+            </div>
+            <div class="cell">
+                <input id="city-number" type="number" size="150" step="1" min="0" value="4" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="city-size">City size</label>
+            </div>
+            <div class="cell">
+                <input id="city-size" type="number" size="150" step="0.01" min="0.05" max="0.5" value="0.5" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">River</label>
+            </div>
+            <div class="cell">
+                <input id="river" type="checkbox" class="checkbox-input" />
+                <label for="river"></label>
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">House</label>
+            </div>
+            <div class="cell">
+                <img id="house" alt="house" src="resources/images/house.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">Desert house</label>
+            </div>
+            <div class="cell">
+                <img id="desertHouse" alt="desert house" src="resources/images/desertHouse.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">Building</label>
+            </div>
+            <div class="cell">
+                <img id="building" alt="building" src="resources/images/building.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">Water</label>
+            </div>
+            <div class="cell">
+                <img id="water" alt="water" src="resources/images/water.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">Road</label>
+            </div>
+            <div class="cell">
+                <img id="road" alt="road" src="resources/images/road.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label for="river">Tree</label>
+            </div>
+            <div class="cell">
+                <img id="tree" alt="tree" src="resources/images/tree.png" />
+            </div>
+            <div class="cell">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <button type="button" id="submit">Let's go !</button>
+            </div>
+            <div class="cell">
+                <button type="reset">Reset</button>
+                <button type="button" id="randomize">Randomize</button>
+            </div>
+        </div>
+    </form>
+
+    <canvas id="canvas"></canvas>
+
+</body>
+
+</html>
